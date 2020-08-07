@@ -1,4 +1,5 @@
 var mysql = require("mysql");
+const util = require("util")
 const { pid } = require("process");
 
 
@@ -22,4 +23,7 @@ connection.connect(function (err) {
     if (err) throw err;
     // call function
 });
-module.exports = db;
+
+connection.query = util.promisify(connection.query);
+
+module.exports = connection;
