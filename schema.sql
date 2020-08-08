@@ -38,6 +38,7 @@ ADD	FOREIGN KEY (department_id) REFERENCES department(id);
 
 select * from role;
 
-select * from department;
+select * from employee;
+
 
 
